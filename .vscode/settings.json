@@ -1,0 +1,5 @@
+{
+  "prettier.eslintIntegration": true,
+  //  #使用带引号替代双引号
+  "prettier.singleQuote": true
+}
