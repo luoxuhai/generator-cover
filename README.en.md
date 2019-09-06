@@ -1,7 +1,7 @@
 - English
 - [简体中文](https://github.com/ibyli/generator-cover/blob/master/README.md)
 
-## Used to quickly generate Chinese book covers
+**Used to quickly generate Chinese book covers**
 
 <p  align="center"> 
   <a href="https://github.com/ibyli/generator-cover/blob/master/LICENSE">
@@ -34,6 +34,9 @@
 | fileName  |            String            |      Date.now().jpg       |    no    |                         File save name                         |
 |  quality  |            Number            |             1             |    no    |                     Output quality(0 - 1)                      |
 |   font    |            Object            |                           |    no    |          Custom font font file name cannot be Chinese          |
+|   width   |            Number            |          470(px)          |    no    |                        Cover the width                         |
+|  height   |            Number            |          750(px)          |    no    |                        Cover the height                        |
+|   left    |            Number            |          90(px)           |    no    |                      Left margin of title                      |
 
 ## Examples
 
@@ -49,7 +52,10 @@ generatorCover({
   fontColor: '#4A70A9',
   fileName: '醒世姻缘传.png',
   savePath: __dirname,
-  quality: 1
+  quality: 1,
+  width: 470,
+  height: 750,
+  left: 90
   // font: {
   //   fontPath: 'fontPath',
   //   family: 'fontFamily'

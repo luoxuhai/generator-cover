@@ -1,7 +1,7 @@
 - 简体中文
 - [English](https://github.com/ibyli/generator-cover/blob/master/README.en.md)
 
-## 用于快速生成中文图书封面
+**用于快速生成中文图书封面**
 
 <p  align="center"> 
   <a href="https://github.com/ibyli/generator-cover/blob/master/LICENSE">
@@ -34,6 +34,9 @@
 | fileName  |            String            |      Date.now().jpg       |  否  |             文件保存名              |
 |  quality  |            Number            |             1             |  否  |           输出质量(0 - 1)           |
 |   font    |            Object            |                           |  否  |   自定义字体 字体文件名不能为中文   |
+|   width   |            Number            |          470(px)          |  否  |              封面宽度               |
+|  height   |            Number            |          750(px)          |  否  |              封面高度               |
+|   left    |            Number            |          90(px)           |  否  |             书名左边距              |
 
 ## 例子
 
@@ -49,7 +52,10 @@ generatorCover({
   fontColor: '#4A70A9',
   fileName: '醒世姻缘传.png',
   savePath: __dirname,
-  quality: 1
+  quality: 1,
+  width: 470,
+  height: 750,
+  left: 90
   // font: {
   //   fontPath: 'fontPath',
   //   family: 'fontFamily'

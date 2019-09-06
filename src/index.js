@@ -25,7 +25,8 @@ module.exports = async ({
   fileName = `${Date.now()}.jpg`,
   quality = 1,
   width = 470,
-  height = 750
+  height = 750,
+  left = 90
 }) => {
   bookName = bookName.trim();
 
@@ -79,10 +80,10 @@ module.exports = async ({
     if ((fontSize * (i + 1)) / height > 0.6) {
       ctx.fillText(
         bookName.charAt(i),
-        100 + fontSize + 20,
+        left + fontSize + 20,
         startOff + fontHeight * index++
       );
-    } else ctx.fillText(bookName.charAt(i), 100, startOff + fontHeight * i);
+    } else ctx.fillText(bookName.charAt(i), left, startOff + fontHeight * i);
   }
 
   ctx.save();
