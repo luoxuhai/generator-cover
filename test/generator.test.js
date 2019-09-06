@@ -6,10 +6,12 @@ describe('generator cover', () => {
     assert.strictEqual(
       await generatorCover({
         bookName: '醒世姻缘传',
-        fontStyle: '74px "Source Han Serif"',
+        fontStyle: '70px "Source Han Serif"',
         savePath: __dirname,
         fileName: '醒世姻缘传.jpg',
-        quality: 0.5,
+        bgColor: '#BCE3E7',
+        fontColor: '#4A70A9',
+        quality: 1
       }),
       `${__dirname}/醒世姻缘传.jpg`
     );

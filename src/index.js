@@ -1,6 +1,6 @@
 /*
  * generator-cover
- * Copyright(c) 2019 izbyi
+ * Copyright(c) 2019-present izbyi (https://github.com/ibyli)
  * MIT Licensed
  */
 
@@ -13,14 +13,19 @@ const readFile = promisify(fs.readFile);
 
 module.exports = async ({
   bookName,
-  fontStyle,
-  bgImgSrc,
+  // TODO: 作者 出版社
+  // bottomWatermark,
+  // author,
+  fontStyle = '74px "Source Han Serif"',
   font,
-  bgColor = '#3A7F98',
+  bgImage,
+  bgColor,
   fontColor = '#FFFFFF',
   savePath = __dirname,
   fileName = `${Date.now()}.jpg`,
-  quality = 1
+  quality = 1,
+  width = 470,
+  height = 750
 }) => {
   bookName = bookName.trim();
 
@@ -29,9 +34,7 @@ module.exports = async ({
       family: font.family
     });
 
-  const width = 500,
-    height = 767,
-    fontScale = 1.2,
+  const fontScale = 1.2,
     canvas = createCanvas(width, height),
     ctx = canvas.getContext('2d');
 
@@ -44,12 +47,12 @@ module.exports = async ({
     ctx.fillRect(0, 0, width, height);
   }
 
-  if (bgImgSrc) {
+  if (bgImage) {
     let image = new Image();
-    if (bgImgSrc.startsWith('http')) {
-      image = await loadImage(bgImgSrc);
-    } else if (bgImgSrc.startsWith('data:image/')) image.src = bgImgSrc;
-    else image.src = await readFile(bgImgSrc);
+    if (bgImage.startsWith('http')) {
+      image = await loadImage(bgImage);
+    } else if (bgImage.startsWith('data:image/')) image.src = bgImage;
+    else image.src = await readFile(bgImage);
     ctx.drawImage(image, 0, 0, width, height);
   }
 
@@ -84,7 +87,11 @@ module.exports = async ({
 
   ctx.save();
 
-  const base64 = await promisify(canvas.toDataURL).call(canvas, 'image/jpeg', quality);
+  const base64 = await promisify(canvas.toDataURL).call(
+    canvas,
+    'image/jpeg',
+    quality
+  );
 
   const dataBuffer = new Buffer.from(
     base64.replace(/^data:image\/\w+;base64,/, ''),
