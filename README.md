@@ -1,19 +1,26 @@
 - 简体中文
-- [English](https://github.com/ibyli/generator-cover/blob/master/README.en.md)
+- [English](https://github.com/luoxuhai/generator-cover/blob/master/README.en.md)
 
 **用于快速生成中文图书封面**
 
 <p  align="center"> 
-  <a href="https://github.com/ibyli/generator-cover/blob/master/LICENSE">
-    <img height="28px" alt="License" src="http://img.shields.io/badge/license-mit-blue.svg?style=for-the-badge" style="max-width:100%;">
+  <a href="https://www.npmjs.com/package/generator-cover">
+    <img height="24px" alt="License" src="https://img.shields.io/npm/v/generator-cover" style="max-width:100%;">
   </a>
+  <a href="https://www.npmjs.com/package/generator-cover">
+  <img height="24px" alt="License" src="https://img.shields.io/npm/dm/generator-cover" style="max-width:100%;">
+  </a>
+  <a href="https://github.com/luoxuhai/generator-cover/blob/master/LICENSE">
+    <img height="24px" alt="License" src="https://img.shields.io/npm/l/generator-cover" style="max-width:100%;">
+  </a>
+
 </p>
 
 ## 安装
 
 **! 使用前请安装 [ node-canvas](https://github.com/Automattic/node-canvas)**
 
-```c
+```bash
   $ npm install generator-cover --save
    or
   $ yarn add generator-cover
@@ -41,8 +48,6 @@
 ## 例子
 
 ```javascript
-'use strict';
-
 const generatorCover = require('generator-cover');
 
 generatorCover({
@@ -67,6 +72,6 @@ generatorCover({
 
 ## License
 
-[MIT](https://github.com/ibyli/generator-cover/blob/master/LICENSE)
+[MIT](https://github.com/luoxuhai/generator-cover/blob/master/LICENSE)
 
-Copyright (c) 2019-present, [ibyli](https://github.com/ibyli/)
+Copyright (c) 2019-present, [luoxuhai](https://github.com/luoxuhai/)
